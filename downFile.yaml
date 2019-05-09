@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: downFile
+  labels:
+    app: downFile
+spec:
+  ports:
+  - port: 80
+    name: http
+  selector:
+    app: getaddr
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: downFile-v1
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: downFile
+        version: v1
+    spec:
+      containers:
+      - name: downFile
+        image: carlo/downFile:v1
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 80
+---
