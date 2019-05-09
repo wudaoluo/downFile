@@ -20,6 +20,9 @@ kind: VirtualService
 metadata:
   name: downfile
 spec:
+  hosts:
+  - "down.carlo.ltd"
+  - "d.carlo.ltd"
   gateways:
   - downfile-gateway
   http:
