@@ -9,12 +9,12 @@ spec:
   - port: 80
     name: http
   selector:
-    app: getaddr
+    app: downFile
 ---
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: downFile-v1
+  name: downFile
 spec:
   replicas: 1
   template:
