@@ -13,11 +13,10 @@ func main() {
 		port = os.Args[1]
 	}
 
-	h := http.FileServer(http.Dir("/tmp"))
+	http.Handle("/",http.FileServer(http.Dir("/tmp")))
 	log.Println("downFile server listen port",port)
-	err := http.ListenAndServe(":"+port, h)
-	if err != nil {
-		log.Fatal("ListenAndServe: ", err)
+	err  := http.ListenAndServe(":"+port,nil)
+	if err!=nil{
+		panic(err)
 	}
-
 }

@@ -31,7 +31,7 @@ spec:
         - containerPort: 80
         volumeMounts:
           - name: down-data
-            mountPath: /data
+            mountPath: /tmp
       volumes:
         - name: down-data
           hostPath:
