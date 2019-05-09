@@ -23,8 +23,8 @@ spec:
   gateways:
   - downfile-gateway
   http:
-    route:
-      - destination:
-          host: downfile
-          port:
-            number: 80
+  - route:
+    - destination:
+        host: downfile
+        port:
+          number: 80
