@@ -29,4 +29,11 @@ spec:
         imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
----
+        volumeMounts:
+          - name: down-data
+            mountPath: /data
+      volumes:
+        - name: down-data
+          hostPath:
+            path: /data/k8s-data/downfile
+            type: Directory

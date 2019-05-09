@@ -12,7 +12,7 @@ func main() {
 	if len(os.Args) == 2 {
 		port = os.Args[1]
 	}
-	http.Handle("/", http.FileServer(http.Dir("./")))
+	http.Handle("/", http.FileServer(http.Dir("/data")))
 
 	log.Println("downFile server listen port",port)
 	err := http.ListenAndServe(":"+port, nil)
